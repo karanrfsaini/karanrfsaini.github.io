@@ -1,26 +1,142 @@
-body {
-    font-family: sans-serif;
+/* Reset some default margin/padding */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #f9f9f9;
     color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
   }
   
   header {
-    background: #333;
+    background: #007acc;
     color: white;
-    padding: 20px;
+    padding: 1rem 0;
     text-align: center;
+    margin-bottom: 2rem;
   }
   
   nav a {
     color: white;
-    margin: 0 10px;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+    color: #ffdd57;
+  }
+  
+  main section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1,
+  h2 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+  }
+  
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 1rem;
+    border: 3px solid #007acc;
+  }
+  
+  .projects-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  
+  .projects-list li {
+    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
+  }
+  
+  .projects-list a {
+    color: #007acc;
+    font-weight: 600;
     text-decoration: none;
   }
   
-  section {
-    padding: 20px;
+  .projects-list a:hover {
+    text-decoration: underline;
+    color: #004a8f;
+  }
+  
+  .contact-form label {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+  }
+  
+  .contact-form button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #005fa3;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #007acc;
+    color: white;
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+  
+  footer a {
+    color: white;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #ffdd57;
   }
   

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Your Website Title</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -15,21 +16,79 @@
     </nav>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>This is where you write a bit about yourself.</p>
-  </section>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <img src="myPhoto.jpg" alt="Karanvir Saini" class="profile-photo" />
+      <p>
+        This is where you write a bit about yourself. Share your background,
+        interests, and what you’re passionate about.
+      </p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Highlight your personal or school projects here.</p>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="projects-list">
+        <li>
+          <a
+            href="https://github.com/yourusername/project1"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Project 1</a
+          >
+          – A cool app I built using React.
+        </li>
+        <li>
+          <a
+            href="https://github.com/yourusername/project2"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Project 2</a
+          >
+          – Machine learning model for image recognition.
+        </li>
+      </ul>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email me at: you@example.com</p>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <form
+        action="https://formspree.io/f/yourformid"
+        method="POST"
+        class="contact-form"
+      >
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br />
 
-  <script src="script.js"></script>
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="_replyto" required /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="5" required></textarea
+        ><br />
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Connect with me:</p>
+    <a
+      href="https://github.com/yourusername"
+      target="_blank"
+      rel="noopener noreferrer"
+      >GitHub</a
+    >
+    |
+    <a
+      href="https://linkedin.com/in/yourusername"
+      target="_blank"
+      rel="noopener noreferrer"
+      >LinkedIn</a
+    >
+    |
+    <a href="mailto:you@example.com">Email</a>
+  </footer>
 </body>
 </html>
