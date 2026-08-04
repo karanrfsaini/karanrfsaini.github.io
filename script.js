@@ -211,9 +211,9 @@ document.head.appendChild(style);
 const heroSubtitle = document.querySelector('.hero-subtitle');
 const originalText = heroSubtitle.textContent;
 const titles = [
-  'Computer Science Student | Software Developer | AI Enthusiast',
-  'Full-Stack Developer | Problem Solver | Tech Innovator',
-  'Code Enthusiast | Lifelong Learner | Future Engineer'
+  'Computer Science Student | Product-Minded Software Developer | Full-Stack Engineer',
+  'Full-Stack Developer | Problem Solver | Product Thinker',
+  'Systems-Focused Builder | Lifelong Learner | Future Engineer'
 ];
 let titleIndex = 0;
 
