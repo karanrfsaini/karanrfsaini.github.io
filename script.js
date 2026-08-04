@@ -2,6 +2,12 @@
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const currentYearEl = document.getElementById('currentYear');
+if (currentYearEl) {
+  currentYearEl.textContent = new Date().getFullYear();
+}
 
 navToggle.addEventListener('click', () => {
   navToggle.classList.toggle('active');
@@ -19,15 +25,20 @@ navLinks.forEach(link => {
 // ========== Smooth Scrolling ==========
 navLinks.forEach(link => {
   link.addEventListener('click', (e) => {
-    e.preventDefault();
     const targetId = link.getAttribute('href');
+
+    if (!targetId || !targetId.startsWith('#')) {
+      return;
+    }
+
+    e.preventDefault();
     const targetSection = document.querySelector(targetId);
     
     if (targetSection) {
       const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
       window.scrollTo({
         top: offsetTop,
-        behavior: 'smooth'
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
       });
     }
   });
@@ -94,6 +105,12 @@ const animateElements = document.querySelectorAll(
 );
 
 animateElements.forEach(el => {
+  if (prefersReducedMotion) {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    return;
+  }
+
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -243,6 +260,10 @@ function typeEffect() {
 
 // ========== Parallax Effect for Hero ==========
 window.addEventListener('scroll', () => {
+  if (prefersReducedMotion) {
+    return;
+  }
+
   const scrolled = window.pageYOffset;
   const hero = document.querySelector('.hero-content');
   if (hero && scrolled < window.innerHeight) {
@@ -265,6 +286,10 @@ window.addEventListener('scroll', () => {
 const projectCards = document.querySelectorAll('.project-card');
 
 projectCards.forEach(card => {
+  if (prefersReducedMotion) {
+    return;
+  }
+
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -300,6 +325,11 @@ console.log(
 
 // ========== Page Load Animation ==========
 window.addEventListener('load', () => {
+  if (prefersReducedMotion) {
+    document.body.style.opacity = '1';
+    return;
+  }
+
   document.body.style.opacity = '0';
   setTimeout(() => {
     document.body.style.transition = 'opacity 0.5s ease';
